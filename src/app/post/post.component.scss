@@ -1,0 +1,12 @@
+.post {
+  border: 2px solid #ccc;
+  padding: 0 10px;
+  width: 800px;
+  margin-bottom: 20px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
