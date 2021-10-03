@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, Input, OnInit} from '@angular/core';
 import {Post} from "../app.component";
 
 @Component({
@@ -8,11 +8,15 @@ import {Post} from "../app.component";
 })
 export class PostComponent implements OnInit {
 
-  @Input() post!: Post
+  @Input() post!: Post;
+  @ContentChild('textLengthBlock') textLengthBlock: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getLengthText() {
+    console.log(this.textLengthBlock.nativeElement);
+  }
 }
