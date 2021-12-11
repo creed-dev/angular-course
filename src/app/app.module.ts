@@ -8,6 +8,7 @@ import { PostFormComponent } from './pages/index/post-form/post-form.component';
 import { PostComponent } from './pages/index/post/post.component';
 import { DirectivesIndexComponent } from './pages/directives/directives-index.component';
 import { IndexComponent } from './pages/index/index.component';
+import { StyleDirective } from './directives/style.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { IndexComponent } from './pages/index/index.component';
     PostFormComponent,
     PostComponent,
     DirectivesIndexComponent,
-    IndexComponent
+    IndexComponent,
+    StyleDirective
   ],
   imports: [
     BrowserModule,
