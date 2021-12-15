@@ -9,6 +9,9 @@ import { PostComponent } from './pages/index/post/post.component';
 import { DirectivesIndexComponent } from './pages/directives/directives-index.component';
 import { IndexComponent } from './pages/index/index.component';
 import { StyleDirective } from './directives/style.directive';
+import { PipesComponent } from './pages/pipes/pipes.component';
+import { MultByPipe } from './pipes/mult-by.pipe';
+import { PostsFilterPipe } from './pipes/posts-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { StyleDirective } from './directives/style.directive';
     PostComponent,
     DirectivesIndexComponent,
     IndexComponent,
-    StyleDirective
+    StyleDirective,
+    PipesComponent,
+    MultByPipe,
+    PostsFilterPipe
   ],
   imports: [
     BrowserModule,

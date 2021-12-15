@@ -1,15 +1,20 @@
-<div class="container">
-  <app-post-form
-    (onAddPost)="updatePosts($event)"
-  ></app-post-form>
-  <hr>
-  <app-post
-    *ngFor="let p of posts"
-    [post]="p"
-  >
-    <div #textLengthBlock>
-      <small *ngIf="p.text.length < 10">Короткий текст</small>
-      <small *ngIf="p.text.length >= 10">Длинный текст</small>
-    </div>
-  </app-post>
-</div>
+<app-post-form
+  (onAddPost)="updatePosts($event)"
+></app-post-form>
+
+<hr>
+
+<input type="text" placeholder="Search by title" class="search" [(ngModel)]="search">
+
+<app-post
+  *ngFor="let p of posts | postsFilter: search"
+  [post]="p"
+>
+
+  <div #textLengthBlock>
+    <small *ngIf="p.text.length < 10">Короткий текст</small>
+    <small *ngIf="p.text.length >= 10">Длинный текст</small>
+  </div>
+
+</app-post>
+

@@ -14,10 +14,13 @@ export interface Post {
 export class IndexComponent {
 
   title = 'angular-app';
+
+  search: string = '';
+
   posts: Array<Post> = [
-    {id: 1, title:'#1 Title', text: '#1 TEXT'},
-    {id: 2, title:'#2 Title', text: '#2 TEXT'},
-    {id: 3, title:'#3 Title', text: '#3 TEXT'}
+    {id: 1, title:'JavaScript', text: 'JavaScript is the best language in the world'},
+    {id: 2, title:'Velvet beer', text: 'Velvet beer is the best beer in the world'},
+    {id: 3, title:'WebStorm', text: 'WebStorm is the best IDE in the world'}
   ]
 
   constructor() { }
