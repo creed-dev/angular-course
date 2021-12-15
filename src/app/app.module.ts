@@ -12,6 +12,7 @@ import { StyleDirective } from './directives/style.directive';
 import { PipesComponent } from './pages/pipes/pipes.component';
 import { MultByPipe } from './pipes/mult-by.pipe';
 import { PostsFilterPipe } from './pipes/posts-filter.pipe';
+import { ServicesComponent } from './pages/services/services.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostsFilterPipe } from './pipes/posts-filter.pipe';
     StyleDirective,
     PipesComponent,
     MultByPipe,
-    PostsFilterPipe
+    PostsFilterPipe,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
