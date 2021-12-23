@@ -4,12 +4,14 @@ import {DirectivesIndexComponent} from "./pages/directives/directives-index.comp
 import {IndexComponent} from "./pages/index/index.component";
 import {PipesComponent} from "./pages/pipes/pipes.component";
 import {ServicesComponent} from "./pages/services/services.component";
+import {FormsComponent} from "./pages/forms/forms.component";
 
 const routes: Routes = [
   { path: 'directives', component: DirectivesIndexComponent },
   { path: 'pipes', component: PipesComponent },
   { path: 'services', component: ServicesComponent },
-  { path: '', component: IndexComponent }
+  { path: '', component: IndexComponent },
+  { path: 'forms', component: FormsComponent },
 ];
 
 @NgModule({
