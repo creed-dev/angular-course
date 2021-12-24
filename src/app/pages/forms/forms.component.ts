@@ -21,7 +21,13 @@ export class FormsComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(6)
-        ])
+        ]),
+      address: new FormGroup({
+        country: new FormControl('ru'),
+        city: new FormControl(null,
+          Validators.required
+        )
+      })
     });
   }
 
@@ -30,5 +36,6 @@ export class FormsComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form);
+    this.form.reset();
   }
 }

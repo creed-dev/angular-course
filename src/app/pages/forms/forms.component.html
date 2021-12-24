@@ -1,13 +1,49 @@
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-  <div class="form__block">
-    <div class="form__block-title">Email</div>
-    <input class="input-text" type="text" formControlName="email">
+  <div class="form__group">
+    <div class="form__group-title">Login</div>
+
+    <div class="form__block">
+      <div class="form__block-title">Email</div>
+      <input class="input-text" type="text" formControlName="email">
+
+      <div class="validation" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+        <div *ngIf="form.controls['email'].errors?.required">Email field is required</div>
+        <div *ngIf="form.controls['email'].errors?.email">Enter the correct email</div>
+      </div>
+    </div>
+
+    <div class="form__block">
+      <div class="form__block-title">Password</div>
+      <input class="input-text" type="password" formControlName="password">
+
+      <div class="validation" *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+        <div *ngIf="form.controls['password'].errors?.required">Password field is required</div>
+        <div>Minimum symbol is {{ form.controls['password'].errors?.minlength.requiredLength }}</div>
+      </div>
+    </div>
   </div>
 
-  <div class="form__block">
-    <div class="form__block-title">Password</div>
-    <input class="input-text" type="password" formControlName="password">
+  <div class="form__group" formGroupName="address">
+    <div class="form__group-title">Address</div>
+
+    <div class="form__block">
+      <div class="form__block-title">Country</div>
+      <select formControlName="country">
+        <option value="ru">Russia</option>
+        <option value="us">United States</option>
+        <option value="ge">Germany</option>
+      </select>
+    </div>
+
+    <div class="form__block">
+      <div class="form__block-title">City</div>
+      <input class="input-text" type="text" formControlName="city">
+
+      <div class="validation" *ngIf="form.controls['address'].get('city')?.invalid && form.controls['address'].get('city')?.touched">
+        <div *ngIf="form.controls['address'].get('city')?.errors?.required">City field is required</div>
+      </div>
+    </div>
   </div>
 
   <button class="form__btn" type="submit" [disabled]="form.invalid">Send Form</button>

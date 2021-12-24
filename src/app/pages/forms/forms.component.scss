@@ -5,9 +5,24 @@
   padding: 20px;
   border: 1px solid black;
 
+  &__group {
+    margin-top: 25px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &-title {
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
   &__block {
     text-align: center;
     margin: 0 auto;
+    margin-top: 10px;
     margin-bottom: 20px;
 
     &:last-child {
@@ -17,6 +32,7 @@
     &-title {
       font-size: 18px;
       margin-bottom: 5px;
+      font-weight: normal;
     }
 
     input {
@@ -29,15 +45,26 @@
         border: 1px solid green;
       }
     }
+
+    select {
+      width: 75%;
+      padding: 5px 10px;
+    }
   }
 
   &__btn {
     display: block;
     margin: 0 auto;
+    margin-top: 20px;
   }
 }
 
 .input-text {
   width: 70%;
   padding: 5px 10px;
+}
+
+.validation {
+  margin-top: 5px;
+  color: red;
 }
