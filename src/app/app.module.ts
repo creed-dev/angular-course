@@ -14,6 +14,7 @@ import { MultByPipe } from './pipes/mult-by.pipe';
 import { PostsFilterPipe } from './pipes/posts-filter.pipe';
 import { ServicesComponent } from './pages/services/services.component';
 import { FormsComponent } from './pages/forms/forms.component';
+import { RxjsComponent } from './pages/rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsComponent } from './pages/forms/forms.component';
     MultByPipe,
     PostsFilterPipe,
     ServicesComponent,
-    FormsComponent
+    FormsComponent,
+    RxjsComponent
   ],
     imports: [
         BrowserModule,
