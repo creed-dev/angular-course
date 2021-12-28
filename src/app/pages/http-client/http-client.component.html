@@ -1,0 +1,15 @@
+<div class="cards">
+  <div class="card" *ngFor="let todo of todos">
+    <div class="card-body">
+      {{ todo.title | titlecase}}
+
+      <div class="alert alert-success" role="alert" *ngIf="todo.completed">
+        Completed
+      </div>
+
+      <div class="alert alert-danger" role="alert" *ngIf="!todo.completed">
+        Not completed
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ import {PipesComponent} from "./pages/pipes/pipes.component";
 import {ServicesComponent} from "./pages/services/services.component";
 import {FormsComponent} from "./pages/forms/forms.component";
 import {RxjsComponent} from "./pages/rxjs/rxjs.component";
+import {HttpClientComponent} from "./pages/http-client/http-client.component";
 
 const routes: Routes = [
   { path: 'directives', component: DirectivesIndexComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'rxjs', component: RxjsComponent },
+  { path: 'http-client', component: HttpClientComponent },
   { path: '', component: IndexComponent },
 ];
 
