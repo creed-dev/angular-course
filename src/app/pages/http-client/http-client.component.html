@@ -1,14 +1,29 @@
-<div class="cards">
-  <div class="card" *ngFor="let todo of todos">
-    <div class="card-body">
-      {{ todo.title | titlecase}}
+<div class="wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" formControlName="title">
+    </div>
 
-      <div class="alert alert-success" role="alert" *ngIf="todo.completed">
-        Completed
-      </div>
+    <select class="form-select" aria-label="Default select example" formControlName="completed">
+      <option [ngValue]="true">Completed</option>
+      <option [ngValue]="false">Not Completed</option>
+    </select>
 
-      <div class="alert alert-danger" role="alert" *ngIf="!todo.completed">
-        Not completed
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+
+  <div class="cards">
+    <div class="card" *ngFor="let todo of todos">
+      <div class="card-body">
+        {{ todo.title | titlecase}}
+
+        <div class="alert alert-success" role="alert" *ngIf="todo.completed">
+          Completed
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="!todo.completed">
+          Not completed
+        </div>
       </div>
     </div>
   </div>
