@@ -19,6 +19,8 @@ import {HttpClientComponent} from './pages/http-client/http-client.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgHttpLoaderModule} from "ng-http-loader";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {NgHttpLoaderModule} from "ng-http-loader";
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    NgHttpLoaderModule.forRoot()
+    NgHttpLoaderModule.forRoot(),
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

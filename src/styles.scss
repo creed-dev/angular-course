@@ -2,3 +2,13 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+/* Material Snack Bar */
+.snackbar {
+  background: #fff;
+  color: #323232;
+
+  button {
+    color: #75B8FF;
+  }
+}

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {Todo} from "../../interfaces/todo.interface";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {TodosService} from "../../services/todos.service";
 
 @Component({
   selector: 'app-http-client',
@@ -13,7 +13,9 @@ export class HttpClientComponent implements OnInit {
   form: FormGroup;
   todos: Todo[] = [];
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(private todosService: TodosService,
+              private formBuilder: FormBuilder,
+  ) {
 
     this.form = this.formBuilder.group({
       title: [null, Validators.required],
@@ -23,9 +25,9 @@ export class HttpClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos/?_limit=20').subscribe(todos => {
+    this.todosService.getTodos().subscribe(todos => {
       this.todos = todos;
-    })
+    });
   }
 
   onSubmit() {
@@ -37,9 +39,21 @@ export class HttpClientComponent implements OnInit {
       return;
     }
 
-    this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos/', this.form.value).subscribe(todo => {
+    this.todosService.addTodo(this.form.value).subscribe(todo => {
       this.todos.unshift(todo);
       this.form.reset();
     })
+  }
+
+  onDelete(id: number | undefined) {
+    this.todosService.deleteTodo(id).subscribe(() => {
+      this.todos = this.todos.filter(item => item.id !== id);
+    });
+  }
+
+  onComplete(id: number | undefined) {
+    this.todosService.updateTodo(id).subscribe(todo => {
+      this.todos.find(item => item.id === todo.id)!.completed = true;
+    });
   }
 }

@@ -13,16 +13,23 @@
   </form>
 
   <div class="cards">
-    <div class="card" *ngFor="let todo of todos">
+    <div class="card" *ngFor="let todo of todos;">
       <div class="card-body">
         {{ todo.title | titlecase}}
 
-        <div class="alert alert-success" role="alert" *ngIf="todo.completed">
-          Completed
-        </div>
+        <div class="card-body__info">
+          <div class="alert alert-success" role="alert" *ngIf="todo.completed">
+            Completed
+          </div>
 
-        <div class="alert alert-danger" role="alert" *ngIf="!todo.completed">
-          Not completed
+          <div class="alert alert-danger" role="alert" *ngIf="!todo.completed">
+            Not completed
+          </div>
+
+          <div class="card-body__buttons">
+            <button class="alert alert-warning" role="alert" (click)="onDelete(todo.id)">Delete post</button>
+            <button class="alert alert-success" role="alert" (click)="onComplete(todo.id)">Complete</button>
+          </div>
         </div>
       </div>
     </div>

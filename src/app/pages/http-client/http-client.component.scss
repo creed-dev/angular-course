@@ -25,6 +25,21 @@ form {
   &:last-child {
     margin-bottom: 0;
   }
+
+  &-body {
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 320px;
+      width: 100%;
+    }
+  }
 }
 
 .alert {
