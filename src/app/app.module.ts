@@ -18,6 +18,7 @@ import {RxjsComponent} from './pages/rxjs/rxjs.component';
 import {HttpClientComponent} from './pages/http-client/http-client.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgHttpLoaderModule} from "ng-http-loader";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgHttpLoaderModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
