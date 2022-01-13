@@ -3,6 +3,11 @@
   padding: 0 10px 10px 10px;
   width: 800px;
   margin-bottom: 20px;
+
+  a {
+    color: black;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;

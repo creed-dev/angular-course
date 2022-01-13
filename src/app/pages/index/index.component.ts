@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PostsService} from "../../services/posts.service";
 
 export interface Post {
   id?: number,
@@ -11,22 +12,24 @@ export interface Post {
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit {
 
   title = 'angular-app';
 
   search: string = '';
 
-  posts: Array<Post> = [
-    {id: 1, title:'JavaScript', text: 'JavaScript is the best language in the world'},
-    {id: 2, title:'Velvet beer', text: 'Velvet beer is the best beer in the world'},
-    {id: 3, title:'WebStorm', text: 'WebStorm is the best IDE in the world'}
-  ]
+  posts: Post[] = [];
 
-  constructor() { }
+  constructor(
+    private postsService: PostsService
+  ) { }
+
+  ngOnInit() {
+    this.posts = this.postsService.getPosts();
+  }
 
   updatePosts(newPost: Post): void {
-    this.posts.unshift(newPost);
+    this.postsService.addPost(newPost);
   }
 
 }

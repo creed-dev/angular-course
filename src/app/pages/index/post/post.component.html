@@ -1,6 +1,6 @@
 <div class="post__wrapper">
   <div class="post">
-    <h2 class="post__title">{{ post.title }}</h2>
+    <h2 class="post__title"><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h2>
     <p class="post__text">{{ post.text }}</p>
     <button (click)="getLengthText()">Get Length Text</button>
     <ng-content></ng-content>

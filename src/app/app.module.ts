@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgHttpLoaderModule} from "ng-http-loader";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { PostPageComponent } from './pages/post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     FormsComponent,
     RxjsComponent,
     HttpClientComponent,
+    PostPageComponent,
   ],
   imports: [
     BrowserModule,
