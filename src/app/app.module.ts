@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { PostPageComponent } from './pages/post-page/post-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { AnimateComponent } from './pages/animate/animate.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     HttpClientComponent,
     PostPageComponent,
     ErrorPageComponent,
+    AnimateComponent,
   ],
   imports: [
     BrowserModule,

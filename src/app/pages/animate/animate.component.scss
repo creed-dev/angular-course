@@ -1,0 +1,14 @@
+.element {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+  background: red;
+}
+
+button {
+  margin: 10px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

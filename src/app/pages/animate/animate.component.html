@@ -1,0 +1,8 @@
+<button (click)="animateBackground()">Background</button>
+<button (click)="animateCircle()">Circle</button>
+<button (click)="visible = !visible">Toggle visible</button>
+
+<div class="element"
+     *ngIf="visible"
+     [@animation]="animationState">
+</div>

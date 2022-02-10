@@ -9,6 +9,7 @@ import {RxjsComponent} from "./pages/rxjs/rxjs.component";
 import {HttpClientComponent} from "./pages/http-client/http-client.component";
 import {PostPageComponent} from "./pages/post-page/post-page.component";
 import {ErrorPageComponent} from "./pages/error-page/error-page.component";
+import {AnimateComponent} from "./pages/animate/animate.component";
 
 const routes: Routes = [
   {path: 'directives', component: DirectivesIndexComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'rxjs', component: RxjsComponent},
   {path: 'http-client', component: HttpClientComponent},
   {path: 'post/:id', component: PostPageComponent},
+  {path: 'animations', component: AnimateComponent},
   {path: '', component: IndexComponent},
   {path: '404', component: ErrorPageComponent},
   {path: '**', redirectTo: '/404'}
